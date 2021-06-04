@@ -43,8 +43,6 @@ export class AppComponent{}
 ```html
 // src/app/app.component.html
 <div class="d-grid">
-  <button class="btn btn-outline-info"> Welcome to Practice Angular - It is going to be Awesome 
-    <fa-icon [icon]="faAmbulance"></fa-icon>
-  </button>
+  <button class="btn btn-outline-info"> Welcome to Practice Angular - It is going to be Awesome </button>
 </div>
 ```

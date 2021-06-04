@@ -29,7 +29,14 @@ import {BrowserModule} from '@angular/platform-browser';
 })
 export class AppModule{}
 ```
-## 04 Include the root component (app.component.ts)
+- Why include `BrowserModule`?
+- BrowserModule provides services that are essential to launch and run a browser app.
+- BrowserModule also re-exports CommonModule from @angular/common
+- which means that components in the AppModule module also have access to the Angular directives every app needs, such as NgIf and NgFor.
+> https://stackoverflow.com/questions/49662864/commonmodule-vs-browsermodule-in-angular
+
+
+### 04 Include the root component (app.component.ts)
 *  app.component needs to be included as an element of declarations and bootstrap metadata
 *  In the next tutorial create the the root component
 

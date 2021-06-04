@@ -1,3 +1,6 @@
+## Learning Objective
+- Generate component using angular cli
+
 ## Components?
 * basic building block of angular app
 * can be considered as any section of UI

@@ -1,6 +1,5 @@
 ## Learning objective 
-- define an application layout 
-	- layout for toolbar(header), sidebar and main content area
+- define an application layout with header, sidebar and main content area
 - define some navigation links in the sidebar
 
 

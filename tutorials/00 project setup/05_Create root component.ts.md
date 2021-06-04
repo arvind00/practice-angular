@@ -1,6 +1,7 @@
 # Steps to create app.component.ts
 * app.component.ts is really important because it is the main component of your app
 * This component is imported and binded in app.module.ts
+* And it is rendered in `index.html` as the root component.
 
 ## 01. Export a class called AppComponent
 
@@ -37,4 +38,13 @@ import { Component } from "@angular/core";
     templateUrl: './app.component.html'
 })
 export class AppComponent{}
+```
+
+```html
+// src/app/app.component.html
+<div class="d-grid">
+  <button class="btn btn-outline-info"> Welcome to Practice Angular - It is going to be Awesome 
+    <fa-icon [icon]="faAmbulance"></fa-icon>
+  </button>
+</div>
 ```

@@ -2,7 +2,6 @@
 - Here we will include just the css of bootstrap5 via link url
 - This is to quicky start with it 
 - For proper installation via npm we will take up in a future tutorial
-- 
 
 ## Include Bootstrap5
 - update index.html to inlcude the cdn link to bootstrap

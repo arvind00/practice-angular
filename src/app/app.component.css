@@ -1,3 +1,21 @@
 .c-spacer-row{
     height: 40px;
 }
+
+.c-sidebar{
+    position:absolute;
+    top: 40px;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+.c-sidebar-expanded{
+    width: 256px;
+}
+
+.c-sidebar-expanded > a:hover {
+    color: #000;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}

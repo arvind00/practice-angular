@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faAmbulance } from '@fortawesome/free-solid-svg-icons'
+import { faAmbulance, faBars } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,6 @@ import { faAmbulance } from '@fortawesome/free-solid-svg-icons'
 export class AppComponent {
 
   faAmbulance = faAmbulance;
+  faBars = faBars;
   title = 'angular-practice';
 }

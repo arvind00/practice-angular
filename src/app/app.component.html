@@ -1,6 +1,9 @@
-<div class="d-grid">
-  <button class="btn btn-outline-info"> Welcome to Practice Angular - It is going to be Awesome 
+<nav class="bg-light fixed-top">
+    <button data-test-id="menu-toggler" class="btn btn-text">
+      <fa-icon [icon]="faBars" class="text-info"></fa-icon>
+    </button>
+    <a class="navbar-brand mr-1" href="#">Practice Angular</a>
     <fa-icon [icon]="faAmbulance"></fa-icon>
-  </button>
-</div>
+</nav>
+<div class="c-spacer-row"></div>
 <router-outlet></router-outlet>

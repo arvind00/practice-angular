@@ -12,8 +12,8 @@ export class AppComponent {
   title = 'angular-practice';
   isSidebarExpanded: Boolean = false;
   menuList = [
-    { label: 'About', route: '/about' },
-    { label: 'Contact', route: '/contact' },
+    { label: 'About', route: '/about', params: this.title },
+    { label: 'Contact', route: '/contact', params: { mobile: 2938749230, email: 'some_email@mail.com' } },
   ];
 
   toggleSideBar() {

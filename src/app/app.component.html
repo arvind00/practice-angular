@@ -7,6 +7,8 @@
 </nav>
 <div class="c-spacer-row"></div>
 <div class="c-sidebar bg-light rounded-end" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded}">
-  <a *ngFor="let m of menuList" [routerLink]="m.route" class="p-1 link-info d-block" (click)="toggleSideBar()">{{m.label}}</a>
+  <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" class="p-1 link-info d-block" (click)="toggleSideBar()">{{m.label}}</a>
 </div>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

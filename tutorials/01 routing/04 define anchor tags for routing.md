@@ -43,7 +43,8 @@
 </div>
 <router-outlet></router-outlet>
 ```
-- Note that we don't use href but `routerLink` property to define the routing path
+- Note that we don't use href but `routerLink` property to define the route path
+- Also note the route string start with `/`. See `app.component.ts>menuList` below. 
 - Another point to note is `c-sidebar-expanded` class is added conditionally based on the flag `isSidebarExpanded`
 - The boolean variable `isSidebarExpanded` is toggled via the method `toggleSideBar()`
 - Update the css as  below

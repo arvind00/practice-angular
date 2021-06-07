@@ -12,3 +12,6 @@
 - [ ] handle scenarios for un-authorized routes
 - [ ] handle unsave changes scenario
 - [ ] code spliting using feature module
+
+## Refrence
+> https://angular.io/guide/router-tutorial

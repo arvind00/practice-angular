@@ -92,3 +92,31 @@ ngOnInit(){
   })
 }
 ```
+
+## Pass Params separated by /
+- Suppose we have a route in the format: `/books/author_id/genre`
+- Example: `/books/au1001/science-fiction` should show all the books of author id: `au1001` in the `science-fiction` genre
+- Generate a component: books `ng g c books --skip-tests=true`
+- add `{ path: 'books/:authorId/:genre', component: BookComponent}` in the routes
+- In the books component read the params passed as
+```ts
+  bookParam: { authorId: String, genre: String } = { authorId: '', genre: '' };
+
+  constructor(private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.bookParam = {
+      authorId: this.activatedRoute.snapshot.params['authorId'],
+      genre: this.activatedRoute.snapshot.params['genre']
+    }
+  }
+```
+- display in the html template as
+```html
+<div>Books from Author Id: {{bookParam.authorId}} for genre: {{bookParam.genre}}</div>
+```
+- hit the browser url like: `http://localhost:4200/books/a1002/science-fiction`
+- or add one menu entry in the sidebar as
+```html
+<a class="p-1 link-info d-block list-group-item" [routerLink]="['/books', 'a1002', 'fantasy']" routerLinkActive="bg-dark">Load Fantacy Books</a>
+```

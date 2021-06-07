@@ -9,7 +9,8 @@
 <!-- end of header -->
 <div class="c-sidebar bg-light list-group" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded, 'c-sidebar-collapsed': isSidebarExpanded===false}">
   <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" routerLinkActive="bg-dark" class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()">{{m.label}}</a>
-  <button class="btn btn-secondary" (click)="navigateToContact()">Go To Contacts</button>
+  <a class="p-1 link-info d-block list-group-item" (click)="navigateToContact()">Go To Contacts</a>
+  <a class="p-1 link-info d-block list-group-item" [routerLink]="['/books', 'a1002', 'fantasy']" routerLinkActive="bg-dark">Load Fantacy Books</a>
 </div>
 <!-- end of sidebar -->
 <div class="container-fluid">

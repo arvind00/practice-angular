@@ -80,6 +80,7 @@ this.route.snapshot.paramMap.get('title');
 - this method has a drawback:
   - navigating from same component with a different param won't work
   - so apply the 2nd Method to read route params
+- Also check out `route.param.get()`
 
 ### 2nd Method to read route params
 ```ts

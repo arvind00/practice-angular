@@ -3,11 +3,11 @@
     <fa-icon [icon]="faBars" class="text-info"></fa-icon>
   </button>
   <a class="navbar-brand mx-1" href="#">Practice Angular</a>
-  <fa-icon [icon]="faAngular" style="color: #da0909; font-size: 1.7em;"></fa-icon>
+  <fa-icon id="angular_icon" [icon]="faAngular" style="color: #da0909; font-size: 1.7em;"></fa-icon>
 </nav>
 <div class="c-spacer-row"></div>
-<div class="c-sidebar bg-light rounded-end" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded}">
-  <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" class="p-1 link-info d-block" (click)="toggleSideBar()">{{m.label}}</a>
+<div class="c-sidebar bg-light list-group" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded, 'c-sidebar-collapsed': isSidebarExpanded===false}">
+  <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()">{{m.label}}</a>
 </div>
 <div class="container-fluid">
   <router-outlet></router-outlet>

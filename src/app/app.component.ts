@@ -10,7 +10,7 @@ export class AppComponent {
   faAngular = faAngular;
   faBars = faBars;
   title = 'angular-practice';
-  isSidebarExpanded: Boolean = false;
+  isSidebarExpanded: Boolean | null = null;
   menuList = [
     { label: 'About', route: '/about', params: this.title },
     { label: 'Contact', route: '/contact', params: { mobile: 2938749230, email: 'some_email@mail.com' } },

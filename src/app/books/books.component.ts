@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -10,13 +10,19 @@ export class BooksComponent implements OnInit {
 
   bookParam: { authorId: String, genre: String } = { authorId: '', genre: '' };
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.bookParam = {
-      authorId: this.activatedRoute.snapshot.params['authorId'],
-      genre: this.activatedRoute.snapshot.params['genre']
-    }
+    this.activatedRoute.params.subscribe((params) => {
+      this.bookParam = {
+        authorId: params['authorId'],
+        genre: params['genre']
+      }
+    })
+  }
+
+  editHistoryBook() {
+    this.router.navigate(['/books/edit', { queryParams: { authorId: 'a1008', genre: 'history' }, fragments: 'frag' }]);
   }
 
 }

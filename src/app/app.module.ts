@@ -7,13 +7,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BooksComponent } from './books/books.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ContactComponent,
-    BooksComponent
+    BooksComponent,
+    EditBookComponent
 ],
   imports: [
     BrowserModule,

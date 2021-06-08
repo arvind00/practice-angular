@@ -1,1 +1,5 @@
 <div>Books from Author Id: {{bookParam.authorId}} for genre: {{bookParam.genre}}</div>
+<hr>
+<a [routerLink]="['../../a1005', 'romance',]">Load book of a1005 with genre romance</a>
+<hr>
+<a [routerLink]="['/books', 'b1005', 'edit']" [queryParams]="{page:3, by: 'admin'}" fragment="S5_P2">Edit a Book /books/id/edit</a>

@@ -1,5 +1,10 @@
-<div>Books from Author Id: {{bookParam.authorId}} for genre: {{bookParam.genre}}</div>
-<hr>
-<a [routerLink]="['../../a1005', 'romance',]">Load book of a1005 with genre romance</a>
-<hr>
-<a [routerLink]="['/books', 'b1005', 'edit']" [queryParams]="{page:3, by: 'admin'}" fragment="S5_P2">Edit a Book /books/id/edit</a>
+
+<h4>Books</h4>
+<div class="row">
+    <div class="col-md-4 list-group">
+        <div *ngFor="let b of bookList" class="list-group-item" (click)="viewBookDetails(b)">{{b.title}} By {{b.author}}</div>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

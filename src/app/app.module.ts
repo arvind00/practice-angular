@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BooksComponent } from './books/books.component';
 import { EditBookComponent } from './books/edit-book/edit-book.component';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EditBookComponent } from './books/edit-book/edit-book.component';
     AboutComponent,
     ContactComponent,
     BooksComponent,
-    EditBookComponent
+    EditBookComponent,
+    BookDetailsComponent
 ],
   imports: [
     BrowserModule,

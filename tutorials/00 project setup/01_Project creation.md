@@ -15,7 +15,7 @@
 - Just go through for your understanding
 
 ## Create a new project (suitable for a single project)
-	$ ng new some-app 
+	$ ng new practice-angular 
 
 You can checkout the vs code extension called Angular v4 Typescript snippets.
 

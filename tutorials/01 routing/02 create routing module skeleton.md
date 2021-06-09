@@ -1,13 +1,13 @@
 ## Learning Objective
-- Define routes
-- Link to `app.module.ts`
+- Create a module to define routes
+- import it to `app.module.ts`
 
-## Step
+## Step 1 - create routing module
 - Create a class called `AppRoutingModule`
 - Decorate with `@NgModule` from `@angular/core`
 - create an array: `routes` of type `Routes` from `@angular/router`
 - as of now keep it empty we will populate it in the next tutorial
-- update the meta data of the module as in the snippet below 
+- update the meta data of the module as in the snippet below
 
 ```ts
 // src/app/app-routing.module.ts
@@ -24,7 +24,7 @@ const routes:Routes = []
 export class AppRoutingModule{}
 ```
 
-- now import this module in the root module as
+## Step 2 - import this module in the root module
 
 ```ts
 // src/app/app.module.ts

@@ -1,16 +1,17 @@
 ## Learning Objective
-- Define simple routes in the routing module
+- Define root routes in the routing module
 
-## Steps
-- Lets define two routes for two components say:
-  - About
-  - Contact
-- So run the below commands to generate them
- ```sh
-ng g c about
-ng g c contact
-```
-- Next import them into the routing module
+## Steps 1 - create components
+- Create the below components
+  1. home
+  1. about
+  1. contact
+  1. books
+- You may use do like `ng g c home --skip-tests=true`
+- Similary create the remaining components
+
+## Step 2 - popuate the routes array 
+- Next import the components into the routing module
 - And define the routes as in the below snippet
 
 ```ts
@@ -21,7 +22,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/about' },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
 ];

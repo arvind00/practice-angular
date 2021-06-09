@@ -6,14 +6,17 @@ import { ContactComponent } from './contact/contact.component';
 import { BooksComponent } from "./books/books.component";
 import { EditBookComponent } from './books/edit-book/edit-book.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/about' },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about/:title', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'books', component: BooksComponent, children: [
-    { path: ':id', component: BookDetailsComponent },
-  ]},
+  {
+    path: 'books', component: BooksComponent, children: [
+      { path: ':id', component: BookDetailsComponent },
+    ]
+  },
 ];
 
 @NgModule({

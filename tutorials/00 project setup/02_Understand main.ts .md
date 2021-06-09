@@ -1,8 +1,8 @@
 # Steps to Create main.ts
 
 ## Learning Objective
-- Understand what files are needed to start up the app
-- Understand how they are linked to each other
+- [x] Understand what files are needed to start up the app
+- [x] Understand how they are linked to each other
 
 ## main.ts
 * main.ts is a simple typescript file

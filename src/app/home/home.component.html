@@ -1,1 +1,3 @@
 <button pRipple class="btn btn-secondary" (click)="showToast()">Welcome</button>
+<button *ngIf="!isLoggedIn" pRipple class="btn btn-success mr-2" (click)="login()">Login</button>
+<button *ngIf="isLoggedIn" pRipple class="btn btn-danger" (click)="logout()">Logout</button>

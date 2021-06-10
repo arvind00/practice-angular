@@ -2,7 +2,7 @@
 - Learn to protect a route and child routes with CanActivate router guard
 
 ## Scenario Briefing
-- Let fake a login service
+- Let us fake a login service
 - Guard the `/books` and it's child routes based on whether the user is logged in or not
 
 ## Step 1 - Generate a router guard that implements CanActivate
@@ -51,7 +51,62 @@ export class AuthService {
 
 ```
 
-## Step 3 - Update auth.guard.ts
+## Step 3 - Include both the services in the providers array of root module
+
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BooksComponent } from './books/books.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
+import { HomeComponent } from './home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { PRIME_MODULES, PRIME_PROVIDERS } from './prime';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    ContactComponent,
+    BooksComponent,
+    EditBookComponent,
+    BookDetailsComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    LoginComponent
+],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
+    AppRoutingModule,
+    SharedModule,
+    PRIME_MODULES
+  ],
+  providers: [
+    PRIME_PROVIDERS,
+    AuthGuard,
+    AuthService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+
+## Step 4 - Update auth.guard.ts
 
 ```ts
 import { Injectable } from '@angular/core';

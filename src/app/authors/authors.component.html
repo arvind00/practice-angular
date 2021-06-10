@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-4 list-group">
+        <div *ngFor="let a of authorList" class="list-group-item" (click)="viewAuthorDetails(a)">{{a.firstName + ' ' + a.lastName}}</div>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

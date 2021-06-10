@@ -10,6 +10,7 @@
     opacity: 0;
     overflow: hidden;
     transform: rotate(90deg);
+    z-index: 1030;
 }
 
 .c-sidebar-expanded{

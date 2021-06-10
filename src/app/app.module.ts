@@ -17,6 +17,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { AuthorsComponent } from './authors/authors.component';
+import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
+import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AuthService } from './auth.service';
     BookDetailsComponent,
     HomeComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    AuthorsComponent,
+    AuthorDetailComponent,
+    EditAuthorComponent
 ],
   imports: [
     BrowserModule,

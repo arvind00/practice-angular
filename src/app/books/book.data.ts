@@ -1,6 +1,8 @@
 
 export const BOOK_LIST = [
-  { id: 'BK1001', title: 'Wings Of Fire', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
-  { id: 'BK1002', title: 'India 2020', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
-  { id: 'BK1003', title: 'Igniting Your Minds', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
+  { id: 'BKABAB1001', title: 'Wings Of Fire', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
+  { id: 'BKABAB1002', title: 'India 2020', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
+  { id: 'BKABAB1001', title: 'Igniting Your Minds', author: 'APJ Abdul Kalam', publisherId: 'pb1001' },
+  { id: 'BKSUMU1001', title: 'Wise And Otherwise', author: 'Sudha Murthy', publisherId: 'pb1001' },
+  { id: 'BKSUMU1002', title: 'Dollar Bahu', author: 'Sudha Murthy', publisherId: 'pb1001' },
 ]

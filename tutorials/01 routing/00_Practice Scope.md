@@ -2,16 +2,18 @@
 - [x] install neccessary package
 - [x] create routing module skeleton
 - [x] define root level routes
-- [x] setup navigation menus
-- [x] nagivate to different pages
-  - [x] through links
-  - [x] programatically
-- [x] pass params to the routes
+- [x] define anchor tags for routing
+  - [x] nagivate via
+    - [x] through links
+    - [x] programatically
+- [x] pass single and multiple params to the routes
   - [x] single params
   - [x] multiple params
   - [x] read the params being passed
-  - [ ] pass and read query params
-  - [ ] pass and read fragment
+- [x] pass query params and fragments
+  - [x] pass and read query params
+  - [x] pass and read fragment
+- [x] children routes - relative routing - preserve query params
 - [ ] handle error scenarios for invalid routes
 - [ ] handle scenarios for un-authorized routes
 - [ ] handle unsave changes scenario

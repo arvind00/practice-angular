@@ -1,5 +1,8 @@
 <p>book-details for book id: {{book?.id}}</p>
 <div class="card">
-    <div class="card-title">{{book?.title}}</div>
-    <div class="card-body">By {{book?.author}}</div>
+    <div class="card-body">
+        <h4 class="card-title">{{book?.title}}</h4>
+        <p class="card-text">By {{book?.author}}</p>
+        <button class="btn btn-secondary" (click)="editBook()">Edit</button>
+    </div>
 </div>

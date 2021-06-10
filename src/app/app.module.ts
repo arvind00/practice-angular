@@ -13,6 +13,10 @@ import { BookDetailsComponent } from './books/book-details/book-details.componen
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { PRIME_MODULES, PRIME_PROVIDERS } from './prime';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { PRIME_MODULES, PRIME_PROVIDERS } from './prime';
     BooksComponent,
     EditBookComponent,
     BookDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent,
+    LoginComponent
 ],
   imports: [
     BrowserModule,
@@ -33,7 +39,9 @@ import { PRIME_MODULES, PRIME_PROVIDERS } from './prime';
     PRIME_MODULES
   ],
   providers: [
-    PRIME_PROVIDERS
+    PRIME_PROVIDERS,
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

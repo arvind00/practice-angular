@@ -17,17 +17,7 @@ export class AuthorsComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.authorList.map((a) => {
-      let _bookids = a.books;
-      let _bookList: string[] = [];
-      _bookids.forEach((bId) => {
-        let _book = this.bookList.find((b) => b.id == bId);
-        if (_book) _bookList.push(_book.title)
-      });
-      a.books = _bookList;
-    });
-  }
+  ngOnInit(): void {}
 
   viewAuthorDetails(author: iAuthor) {
     this.router.navigate([author.id], { relativeTo: this.activatedRoute, queryParams: author });

@@ -1,1 +1,13 @@
-<p>author-detail works!</p>
+<div class="card" style="width: 256px;">
+    <div class="card-body">
+        <h4 class="card-title">Author details !</h4>
+        <p class="card-text">{{author?.firstName}} has the below list of book ids under his/her name.</p>
+        <ul *ngFor="let bId of author?.bookIds" class="list-group">
+            <li class="list-group-item">{{bId}}</li>
+        </ul>
+        <a class="card-link" [routerLink]="['edit']" [queryParams]="author">
+            <fa-icon [icon]="edit"></fa-icon>
+        </a>
+    </div>
+</div>
+

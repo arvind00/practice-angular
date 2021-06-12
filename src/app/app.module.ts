@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -42,7 +43,8 @@ import { EditAuthorComponent } from './authors/edit-author/edit-author.component
     FontAwesomeModule,
     AppRoutingModule,
     SharedModule,
-    PRIME_MODULES
+    PRIME_MODULES,
+    ReactiveFormsModule
   ],
   providers: [
     PRIME_PROVIDERS,

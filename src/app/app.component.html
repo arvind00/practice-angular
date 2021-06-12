@@ -10,9 +10,9 @@
 <div class="c-sidebar bg-light list-group" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded, 'c-sidebar-collapsed': isSidebarExpanded===false}">
   <a class="p-1 link-info d-block list-group-item" [routerLink]="['/']" routerLinkActive="bg-dark" [routerLinkActiveOptions]="{exact: true}">Home</a>
   <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" routerLinkActive="bg-dark" class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()">{{m.label}}</a>
-  <a class="p-1 link-info d-block list-group-item" (click)="navigateToContact()">Go To Contacts</a>
-  <a class="p-1 link-info d-block list-group-item" [routerLink]="['/books']" routerLinkActive="bg-dark">Books</a>
-  <a class="p-1 link-info d-block list-group-item" [routerLink]="['/authors']" routerLinkActive="bg-dark">Authors</a>
+  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar(); navigateToContact()">Go To Contacts</a>
+  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()" [routerLink]="['/books']" routerLinkActive="bg-dark">Books</a>
+  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()" [routerLink]="['/authors']" routerLinkActive="bg-dark">Authors</a>
 </div>
 <!-- end of sidebar -->
 <div class="container-fluid">

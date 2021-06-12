@@ -1,1 +1,24 @@
-<p>edit-author works!</p>
+<div class="card" style="width: 400px;">
+    <div class="card-body">
+        <h6 class="card-title">Edit Author</h6>
+        <form [formGroup]="editAuthorForm">
+            <div class="mb-2">
+                <label for="id">Author Id</label>
+                <input class="form-control" type="text" name="id" id="id" formControlName="id" [attr.disabled]="true" />
+            </div>
+            <div class="mb-2">
+                <label for="id">First Name</label>
+                <input class="form-control" type="text" name="firstName" id="firstName" formControlName="firstName" />
+            </div>
+            <div class="mb-2">
+                <label for="id">Last Name</label>
+                <input class="form-control" type="text" name="lastName" id="lastName" formControlName="lastName" />
+            </div>
+            <div class="mb-2">
+                <label for="id">Book Ids</label>
+                <input class="form-control" type="text" name="bookIds" id="bookIds" formControlName="bookIds" />
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!editAuthorForm.valid || !isChanged">Save Changes</button>
+        </form>
+    </div>
+</div>

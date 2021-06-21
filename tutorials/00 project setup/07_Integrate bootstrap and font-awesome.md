@@ -80,7 +80,7 @@ Use the icon in the template src/app/app.component.html
 
 For brands install
 ```sh
-@fortawesome/free-brands-svg-icons
+npm i @fortawesome/free-brands-svg-icons
 ```
 
 ## Reference

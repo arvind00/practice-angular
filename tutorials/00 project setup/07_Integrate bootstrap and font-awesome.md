@@ -78,6 +78,11 @@ Use the icon in the template src/app/app.component.html
 <fa-icon [icon]="faCoffee"></fa-icon>
 ```
 
+For brands install
+```sh
+@fortawesome/free-brands-svg-icons
+```
+
 ## Reference
 > https://getbootstrap.com/docs/5.0/getting-started/introduction/
 > https://github.com/FortAwesome/angular-fontawesome

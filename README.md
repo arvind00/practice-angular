@@ -3,8 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
 ## Project Objective
-- Learn the core concepts of angular step by step as myself goes through the learning process
-- This will be like short excersises which one can complete within 10 mins
+- Learn the core concepts of angular step by step as I go through the learning process
+- There will be short excersises which one can complete within 10 mins
 - Follow the `tutorials` folder to practice the concepts
 
 ## Development server

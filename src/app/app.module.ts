@@ -16,11 +16,12 @@ import { SharedModule } from './shared/shared.module';
 import { PRIME_MODULES, PRIME_PROVIDERS } from './prime';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './auth.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { EditAuthorComponent } from './authors/edit-author/edit-author.component
   providers: [
     PRIME_PROVIDERS,
     AuthGuard,
-    AuthService
+    AuthService,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })

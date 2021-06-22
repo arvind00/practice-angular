@@ -1,7 +1,7 @@
 <div class="card" style="width: 400px;">
     <div class="card-body">
         <h6 class="card-title">Edit Author</h6>
-        <form [formGroup]="editAuthorForm">
+        <form [formGroup]="editAuthorForm" (ngSubmit)="saveChanges()">
             <div class="mb-2">
                 <label for="id">Author Id</label>
                 <input class="form-control" type="text" name="id" id="id" formControlName="id" [attr.disabled]="true" />

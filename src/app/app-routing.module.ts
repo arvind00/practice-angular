@@ -8,7 +8,8 @@ import { EditBookComponent } from './books/edit-book/edit-book.component';
 import { BookDetailsComponent } from './books/book-details/book-details.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { LoginComponent } from './login/login.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
@@ -28,7 +29,7 @@ const routes: Routes = [
   {
     path: 'authors', component: AuthorsComponent, canActivateChild: [AuthGuard], children: [
       { path: ':id', component: AuthorDetailComponent },
-      { path: ':id/edit', component: EditAuthorComponent },
+      { path: ':id/edit', component: EditAuthorComponent, canDeactivate: [CanDeactivateGuard] },
     ]
   },
   { path: 'page-not-found', component: PageNotFoundComponent },

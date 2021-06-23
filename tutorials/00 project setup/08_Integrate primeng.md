@@ -1,6 +1,13 @@
 ## Learning Objective
 - [x] install and integrate primeng
 
+## My Opinion About Primeng
+- One word: *Awesome!*
+- I think it is more complete than Angular Material.
+- I love how customizable the p-table and p-treetable are.
+- It doesn't mean I have less respect for Angular Material.
+- I love both of them.
+
 ## Step 1 - Install Pacakges
 ```sh
 npm i primeng primeicons -S

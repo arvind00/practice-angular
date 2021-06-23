@@ -3,6 +3,7 @@ import {FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { iAuthor } from "../author";
 import { CanDeactiveComponent } from '../../guards/can-deactivate.guard'
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-edit-author',
@@ -24,11 +25,20 @@ export class EditAuthorComponent implements OnInit, CanDeactiveComponent {
     private fb: FormBuilder, 
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private confirmationService: ConfirmationService
   ) { }
 
   canDeactivate(){
     if(!this.isChanged) return true;
-    return confirm('Unsaved changes will be lost. Discard changes?');
+    return new Promise<boolean>((resolve, reject)=>{
+      this.confirmationService.confirm({
+        message: 'Unsaved changes will be lost. Discard changes?',
+        header: 'Leave Page',
+        icon: "pi pi-exclamation-triangle",
+        accept: ()=> resolve(true),
+        reject: ()=> reject(false)
+      });
+    })
   }
 
   ngOnInit(): void {

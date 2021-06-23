@@ -1,6 +1,6 @@
 ## Learning Objective
 - [x] Display a confirmation message when trying a leave a page
-- [x] This way your will learn to use CanDeactivate guard
+- [x] This way you will learn to use CanDeactivate guard
 
 
 ## Scenario Briefing
@@ -14,7 +14,7 @@
 - Clickingon [No] should cancel the navigation.
 
 ## Implementation Strategy
-- Create an interface that gives the signature of a canDeactive method before the guard service class is created
+- Create an interface that gives the signature of a `canDeactivate` method before the guard service class is created
 ```ts
 export interface CanDeactiveComponent {
   canDeactivate: ()=> Observable<boolean> | Promise<boolean>;
@@ -47,6 +47,7 @@ export class CanDeactivateGuard implements CanDeactivate<CanDeactiveComponent> {
 ```
 - [x] don't forget to add this guard to the module providers array
 - [x] Next make sure the author-edit component implements the `CanDeactivateComponent` interface
+- [ ] And implment the `canDeactivate()`
 - [x] After user clicks on [Save Changes]
   - update the flag that tracks unsaved changes and
   - navigate to author page(use relative routing)

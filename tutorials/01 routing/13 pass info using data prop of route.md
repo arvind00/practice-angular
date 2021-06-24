@@ -1,5 +1,5 @@
 ## Learning Objective
-- [] In the page not found route pass some static info using the `data` property of the route
+- [x] In the `page not found` route pass some static info using the `data` property of the route
 
 ## Step 1 - Update the app-routing.module.ts
 ```ts
@@ -7,7 +7,7 @@
 ```
 
 ## Step 2 - Retrived the data in the component
-- [] Inject activated route service and access the data prop just like the params and query params
+- [x] Inject activated route service and access the data prop just like the params and query params
 
 ```ts
 import { Component, OnInit } from '@angular/core';

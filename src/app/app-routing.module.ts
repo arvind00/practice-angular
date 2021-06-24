@@ -32,7 +32,7 @@ const routes: Routes = [
       { path: ':id/edit', component: EditAuthorComponent, canDeactivate: [CanDeactivateGuard] },
     ]
   },
-  { path: 'page-not-found', component: PageNotFoundComponent, data: {info: 'The Requested Page is not found.'} },
+  { path: 'page-not-found', component: PageNotFoundComponent, data: {info: 'The requested Page is not found.'} },
   { path: '**', redirectTo: '/page-not-found' },
 ];
 

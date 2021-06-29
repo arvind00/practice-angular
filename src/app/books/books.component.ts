@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BOOK_LIST } from './book.data';
+import { Router, ActivatedRoute, Data } from '@angular/router';
 import { iBook } from './book.interface';
 
 
@@ -11,10 +10,17 @@ import { iBook } from './book.interface';
 })
 export class BooksComponent implements OnInit {
 
-  bookList: iBook[] = BOOK_LIST;
-  constructor(private router: Router) { }
+  bookList: iBook[] = [];
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,  
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.data.subscribe((data: Data)=>{
+      this.bookList = data['bookList'];
+    })
+  }
 
   viewBookDetails(b:iBook){
     this.router.navigate(['/books', b.id], {queryParams:{ publisherId: b.publisherId}});

@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
+import { BooksResolver } from './books/books.resolver';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'about/:title', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   {
-    path: 'books', component: BooksComponent, canActivate: [AuthGuard], children: [
+    path: 'books', component: BooksComponent, resolve: {bookList: BooksResolver}, canActivate: [AuthGuard], children: [
       { path: ':id', component: BookDetailsComponent },
       { path: ':id/edit', component: EditBookComponent },
     ]

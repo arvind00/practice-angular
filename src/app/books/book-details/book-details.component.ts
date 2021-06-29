@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { BOOK_LIST } from '../book.data';
 import { iBook } from '../book.interface';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-book-details',
@@ -13,13 +13,19 @@ export class BookDetailsComponent implements OnInit {
   bookId: String | null = null;
   title: String | null = null;
   author: String | null = null;
+  BOOK_LIST: iBook[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private router: Router,
+    private bookService: BookService
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.getBookDetailsById(params['id']);
     })
+    this.bookService.getBooks().subscribe(res=>this.BOOK_LIST = res);
   }
 
   editBook() {
@@ -33,6 +39,6 @@ export class BookDetailsComponent implements OnInit {
   }
 
   getBookDetailsById(id: String) {
-    this.book = BOOK_LIST.find((b) => b.id === id)
+    this.book = this.BOOK_LIST.find((b) => b.id === id)
   }
 }

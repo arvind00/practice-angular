@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -22,6 +23,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
+import { BooksResolver} from './books/books.resolver';
 
 @NgModule({
   declarations: [
@@ -45,13 +47,15 @@ import { CanDeactivateGuard } from './guards/can-deactivate.guard';
     AppRoutingModule,
     SharedModule,
     PRIME_MODULES,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     PRIME_PROVIDERS,
     AuthGuard,
     AuthService,
-    CanDeactivateGuard
+    CanDeactivateGuard,
+    BooksResolver
   ],
   bootstrap: [AppComponent]
 })

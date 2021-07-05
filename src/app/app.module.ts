@@ -24,6 +24,7 @@ import { AuthorDetailComponent } from './authors/author-detail/author-detail.com
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { BooksResolver} from './books/books.resolver';
+import { SampleComponent } from './sample/sample.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BooksResolver} from './books/books.resolver';
     LoginComponent,
     AuthorsComponent,
     AuthorDetailComponent,
-    EditAuthorComponent
+    EditAuthorComponent,
+    SampleComponent
 ],
   imports: [
     BrowserModule,

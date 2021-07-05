@@ -15,9 +15,11 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 import { BooksResolver } from './books/books.resolver';
+import { SampleComponent } from './sample/sample.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'sample', component: SampleComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about/:title', component: AboutComponent },
   { path: 'contact', component: ContactComponent },

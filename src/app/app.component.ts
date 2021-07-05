@@ -3,6 +3,7 @@ import { PrimeNGConfig } from "primeng/api";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
+import { AppStateService } from './app-state.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,11 +20,14 @@ export class AppComponent implements OnInit {
   ];
   constructor(
     private router: Router,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
+    private appStateService: AppStateService
   ) { }
 
+  showSpinner = false;
   ngOnInit() {
     this.primengConfig.ripple = true;
+    this.appStateService.getSpinnerState().subscribe(spinnerState=>{ this.showSpinner = spinnerState });
   }
 
   toggleSideBar() {
@@ -32,5 +36,10 @@ export class AppComponent implements OnInit {
 
   navigateToContact() {
     this.router.navigate(['/contact', { mobile: 2938749230, email: 'some_email@mail.com' }]);
+  }
+
+  fakeDataFetch(){
+    this.appStateService.setSpinnerState(true);
+    setTimeout(()=>this.appStateService.setSpinnerState(false), 2000);
   }
 }

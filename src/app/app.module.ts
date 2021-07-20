@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -25,6 +25,7 @@ import { EditAuthorComponent } from './authors/edit-author/edit-author.component
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { BooksResolver} from './books/books.resolver';
 import { SampleComponent } from './sample/sample.component';
+import { CustomHttpInterceptor } from './common/http-interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SampleComponent } from './sample/sample.component';
     AuthGuard,
     AuthService,
     CanDeactivateGuard,
-    BooksResolver
+    BooksResolver,
+    { provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

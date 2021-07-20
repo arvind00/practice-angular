@@ -4,6 +4,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
 import { AppStateService } from './app-state.service';
+import { AppDataService } from './app-data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,7 +23,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private primengConfig: PrimeNGConfig,
-    private appStateService: AppStateService
+    private appStateService: AppStateService,
+    private appDataServie: AppDataService
   ) { }
 
   showSpinner = false;
@@ -39,7 +42,8 @@ export class AppComponent implements OnInit {
   }
 
   fakeDataFetch(){
-    this.appStateService.setSpinnerState(true);
-    setTimeout(()=>this.appStateService.setSpinnerState(false), 2000);
+    this.appDataServie.sendGetRequest<any>('assets/data/books.json').subscribe(res=>{
+      console.log(res);
+    });
   }
 }

@@ -2,6 +2,12 @@
 - [x] Create a service class to make http api calls
 
 
+## Briefing
+- Main intention is to create a service class which will have some methods to make http request
+- These methods will be generic and later schema validation and error handling will be added.
+- So that there is only a single place for validations and error handling for http response.
+- In this tuto, however, only the generic methods will be defined.
+
 ## Module to import
 - in app.module.ts import
 ```ts
@@ -39,6 +45,8 @@ export class AppDataService {
   }
 }
 ```
+- Here <T> is the generic type passed. It is the schema for the http response.
+
 ## Step 2 - Create a component and use this service
 
 ```ts
@@ -73,6 +81,7 @@ export interface iRes {
   [prop: string]: any
 }
 ```
+- In the above code, an api request is made that will return a json object containing key value pairs.
 
 ```html
 <button class="btn btn-primary" (click)="fetchSampleJson()">Fetch Sample JSON</button>

@@ -4,6 +4,7 @@ import { BookService } from '../books/book.service';
 import { iBook } from '../books/book.interface';
 import { iAuthor } from './author';
 import { AUTHOR_LIST } from './authors.data';
+import { AppDataService } from '../app-data.service';
 
 @Component({
   selector: 'app-authors',
@@ -12,16 +13,20 @@ import { AUTHOR_LIST } from './authors.data';
 })
 export class AuthorsComponent implements OnInit {
 
-  authorList = [...AUTHOR_LIST];
+  authorList:iAuthor[] = [];
   bookList: iBook[] = [];
 
   constructor(
     private router: Router, 
     private activatedRoute: ActivatedRoute,
-    private bookService: BookService
+    private bookService: BookService,
+    private appDataService: AppDataService
   ) { }
 
   ngOnInit(): void {
+    this.appDataService.sendGetRequest<iAuthor[]>('assets/data/authors.json').subscribe(authors =>{
+      this.authorList = authors;
+    }, err => console.log(err.message));
     this.bookService.getBooks().subscribe(res=>this.bookList = res);
   }
 

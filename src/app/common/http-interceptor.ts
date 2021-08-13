@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+import { delay, finalize } from 'rxjs/operators';
 
 import { AppStateService } from '../app-state.service';
 
@@ -14,6 +14,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
         this.appStateService.setSpinnerState(true);
 
         return next.handle(req).pipe(
+            delay(0),
             finalize(()=>this.appStateService.setSpinnerState(false))
         );
     }

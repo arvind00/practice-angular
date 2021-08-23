@@ -26,6 +26,7 @@ import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { BooksResolver} from './books/books.resolver';
 import { SampleComponent } from './sample/sample.component';
 import { CustomHttpInterceptor } from './common/http-interceptor';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CustomHttpInterceptor } from './common/http-interceptor';
     SharedModule,
     PRIME_MODULES,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [
     PRIME_PROVIDERS,

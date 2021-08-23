@@ -1,3 +1,14 @@
 <button pRipple class="btn btn-secondary" (click)="showToast()">Welcome</button>
-<button *ngIf="!isLoggedIn" pRipple class="btn btn-success mr-2" (click)="login()">Login</button>
+<button *ngIf="!isLoggedIn" pRipple class="btn btn-success mx-2" (click)="login()">Login</button>
 <button *ngIf="isLoggedIn" pRipple class="btn btn-danger" (click)="logout()">Logout</button>
+<h3>Raised Buttons</h3>
+<div class="example-button-row">
+  <button mat-raised-button class="mx-2">Basic</button>
+  <div class="inline-block m-2">
+    <button mat-raised-button color="primary" class="mr-2">Primary</button>
+  </div>
+  <button mat-raised-button color="accent" class="mr-2">Accent</button>
+  <button mat-raised-button color="warn" class="mr-2">Warn</button>
+  <button mat-raised-button disabled class="mr-2">Disabled</button>
+  <a mat-raised-button routerLink=".">Link</a>
+</div>

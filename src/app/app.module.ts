@@ -26,7 +26,7 @@ import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 import { BooksResolver} from './books/books.resolver';
 import { SampleComponent } from './sample/sample.component';
 import { CustomHttpInterceptor } from './common/http-interceptor';
-import { MaterialModule } from './material.module';
+import { TemplatePocComponent } from './template-poc/template-poc.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { MaterialModule } from './material.module';
     AuthorsComponent,
     AuthorDetailComponent,
     EditAuthorComponent,
-    SampleComponent
+    SampleComponent,
+    TemplatePocComponent,
 ],
   imports: [
     BrowserModule,
@@ -52,8 +53,7 @@ import { MaterialModule } from './material.module';
     SharedModule,
     PRIME_MODULES,
     ReactiveFormsModule,
-    HttpClientModule,
-    MaterialModule
+    HttpClientModule
   ],
   providers: [
     PRIME_PROVIDERS,

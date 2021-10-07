@@ -16,10 +16,12 @@ import { AuthorDetailComponent } from './authors/author-detail/author-detail.com
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 import { BooksResolver } from './books/books.resolver';
 import { SampleComponent } from './sample/sample.component';
+import { TemplatePocComponent } from './template-poc/template-poc.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: '', pathMatch: 'full', component: TemplatePocComponent },
   { path: 'sample', component: SampleComponent },
+  { path: 'template-poc', component: TemplatePocComponent},
   { path: 'login', component: LoginComponent },
   { path: 'about/:title', component: AboutComponent },
   { path: 'contact', component: ContactComponent },

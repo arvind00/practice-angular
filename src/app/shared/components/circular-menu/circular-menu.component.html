@@ -1,0 +1,10 @@
+<nav class="circular-menu-wrapper">
+    <a class="circular-menu-icon" [class.disabled]="disabled" [ngStyle]="menuOptions?.styles || null">
+        <i [ngClass]="opened? 'fa fa-times' : menuOptions.icon || 'fa fa-bars' "></i>
+    </a>
+    <ul class="menu-wrapper" [ngClass]="{'up': showUpwards, 'down': showDownwards, 'left': showLeftSide, 'right': showRightSide}">
+        <li class="menu-item wing" *ngFor="let wing of wings">
+            <i [ngClass]="wing.icon"></i>
+        </li>
+    </ul>
+</nav>

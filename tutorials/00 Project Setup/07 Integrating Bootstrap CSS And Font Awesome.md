@@ -83,6 +83,21 @@ For brands install
 npm i @fortawesome/free-brands-svg-icons
 ```
 
+## Another Way to install fontawesom - easy to use
+
+```sh
+npm install --save @fortawesome/fontawesome-free
+```
+
+- update angular.json
+
+```json
+"styles": [
+    "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+    "src/styles.scss"
+]
+```
+
 ## Reference
 > https://getbootstrap.com/docs/5.0/getting-started/introduction/
 > https://github.com/FortAwesome/angular-fontawesome

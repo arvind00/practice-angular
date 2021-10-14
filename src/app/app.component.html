@@ -1,26 +1,12 @@
 <app-spinner></app-spinner>
-<nav class="bg-light fixed-top d-flex align-items-center">
-  <button data-test-id="menu-toggler" class="btn btn-text" (click)="toggleSideBar()">
-    <fa-icon [icon]="faBars" class="text-info"></fa-icon>
-  </button>
-  <a class="navbar-brand mx-1" href="#">Practice Angular</a>
-  <fa-icon id="angular_icon" [icon]="faAngular" style="color: #da0909; font-size: 1.7em;"></fa-icon>
-  <app-circular-menu [menuOptions]="circularMenuOptions" [wings]="wings" [disabled]="false"></app-circular-menu>
-</nav>
-<div class="c-spacer-row"></div>
-<!-- end of header -->
-
-<div class="c-sidebar bg-light list-group" [ngClass]="{'c-sidebar-expanded': isSidebarExpanded, 'c-sidebar-collapsed': isSidebarExpanded===false}">
-  <a class="p-1 link-info d-block list-group-item" [routerLink]="['/']" routerLinkActive="bg-dark" [routerLinkActiveOptions]="{exact: true}">Home</a>
-  <a *ngFor="let m of menuList" [routerLink]="[m.route, m.params]" routerLinkActive="bg-dark" class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()">{{m.label}}</a>
-  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar(); navigateToContact()">Go To Contacts</a>
-  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()" [routerLink]="['/books']" routerLinkActive="bg-dark">Books</a>
-  <a class="p-1 link-info d-block list-group-item" (click)="toggleSideBar()" [routerLink]="['/authors']" routerLinkActive="bg-dark">Authors</a>
-</div>
-<!-- end of sidebar -->
+<app-header></app-header>
+<app-sidebar></app-sidebar>
 
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>
 <p-toast key="app-level-toast" [baseZIndex]="1031"></p-toast>
-<p-confirmDialog [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"></p-confirmDialog>
+<p-confirmDialog
+  [breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+  [style]="{ width: '50vw' }"
+></p-confirmDialog>

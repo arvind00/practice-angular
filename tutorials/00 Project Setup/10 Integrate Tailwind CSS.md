@@ -29,7 +29,7 @@ UPDATE src/index.html (796 bytes)
 ```
 
 - To get tailwind css intellisence install the extension Tailwind CSS Intellisence by Brad Cornes
-- If you use material components don't use tailwindcss classes to it as it gets overridden by material's styles. You can use it in non-material elements and layouts
+- If you use material components don't use tailwindcss classes to it as it gets overridden by material's styles. You can use it in non-material elements and other layouts elements
 
 ## Reference
 - [why tailwindcss](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)

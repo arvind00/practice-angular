@@ -1,0 +1,16 @@
+<nav class="bg-light fixed-top d-flex align-items-center">
+  <button
+    data-test-id="menu-toggler"
+    class="btn btn-text"
+    (click)="toggleSideBar()"
+  >
+    <fa-icon [icon]="faBars" class="text-info"></fa-icon>
+  </button>
+  <a class="navbar-brand mx-1" href="#">Practice Angular</a>
+  <fa-icon
+    id="angular_icon"
+    [icon]="faAngular"
+    style="color: #da0909; font-size: 1.7em"
+  ></fa-icon>
+</nav>
+<div class="c-spacer-row"></div>

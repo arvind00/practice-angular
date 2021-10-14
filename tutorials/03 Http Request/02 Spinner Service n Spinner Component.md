@@ -1,5 +1,6 @@
 ## Learning Objective
-- [x] create a service class to set and udpate spinner state
+- [x] create a service class to set spinner state
+- [x] create a spinner component
 
 ## Design Plan
 - Let's create a spinner component
@@ -96,4 +97,4 @@ fakeDataFetch(){
 - In the next tutorial we will use http interceptor to update the spinner state with every api request
 
 ## Reference
-> 
+> https://material.angular.io/components/progress-spinner/overview

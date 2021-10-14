@@ -1,0 +1,41 @@
+.c-sidebar{
+    position:absolute;
+    top: 40px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: rotate(90deg);
+    z-index: 1030;
+}
+
+.c-sidebar-expanded{
+    animation-name: hinge-open;
+    animation-duration: 1s;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+}
+
+.c-sidebar-collapsed{
+    animation-name: hinge-close;
+    animation-duration: 1s;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hinge-open {
+    0% {width: 0; height: 0; transform: rotate(90deg); opacity: 0.2;}
+    50% {width: 128px; height: 200px; transform: rotate(45deg); opacity: 5;}
+    100% {width: 256px; height: 400px; transform: rotate(0deg); opacity: 1;}
+}
+@keyframes hinge-close {
+    0% {width: 256px; height: 400px; transform: rotate(10deg);}
+    50% {width: 128px; height: 200px; transform: rotate(45deg);}
+    100% {width: 0; height: 0; transform: rotate(90deg); opacity: 1;}
+}
+
+.c-sidebar-expanded > a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #40bf9c;
+    border-color: #40bf9c;
+}

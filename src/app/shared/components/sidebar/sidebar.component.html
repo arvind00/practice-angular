@@ -1,0 +1,24 @@
+<div
+  class="c-sidebar bg-light list-group"
+  [ngClass]="{
+    'c-sidebar-expanded': isSidebarExpanded,
+    'c-sidebar-collapsed': isSidebarExpanded === false
+  }"
+>
+  <a
+    class="p-1 link-info d-block list-group-item"
+    [routerLink]="['/']"
+    routerLinkActive="bg-dark"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="toggleSidebar()"
+    >Home</a
+  >
+  <a
+    *ngFor="let m of menuList"
+    [routerLink]="[m.route, m.params]"
+    routerLinkActive="bg-dark"
+    class="p-1 link-info d-block list-group-item"
+    (click)="toggleSidebar()"
+    >{{ m.label }}</a
+  >
+</div>

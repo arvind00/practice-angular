@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -23,10 +23,12 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorDetailComponent } from './authors/author-detail/author-detail.component';
 import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
-import { BooksResolver} from './books/books.resolver';
+import { BooksResolver } from './books/books.resolver';
 import { SampleComponent } from './sample/sample.component';
 import { CustomHttpInterceptor } from './common/http-interceptor';
 import { TemplatePocComponent } from './template-poc/template-poc.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/reducers/app.reducer';
 
 @NgModule({
   declarations: [
@@ -44,16 +46,16 @@ import { TemplatePocComponent } from './template-poc/template-poc.component';
     EditAuthorComponent,
     SampleComponent,
     TemplatePocComponent,
-],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FontAwesomeModule,
     AppRoutingModule,
     SharedModule,
     PRIME_MODULES,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(appReducer)
   ],
   providers: [
     PRIME_PROVIDERS,
@@ -61,8 +63,12 @@ import { TemplatePocComponent } from './template-poc/template-poc.component';
     AuthService,
     CanDeactivateGuard,
     BooksResolver,
-    { provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,5 +1,5 @@
 ## Learning Objective
-- [] Integrate Angular Material to the current project
+- [x] Integrate Angular Material to the current project
 
 ## Special Note:
 - I read it somewhere that we need to integrate angular material before tailwind css
